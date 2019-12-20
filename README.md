@@ -1,3 +1,20 @@
+# tf2-keras-yolo3
+
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
+
+这是对[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的fork和修改，目的是使它支持TensorFlow 2.0。
+
+下附[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的README.
+
+
+This is a fork and modification of [qqwweee / keras-yolo3](https://github.com/qqwweee/keras-yolo3), in order to make it support TensorFlow 2.0.
+
+Attached is the README of [qqwweee / keras-yolo3](https://github.com/qqwweee/keras-yolo3).
+
+
+
+------------------------
+
 # keras-yolo3
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
