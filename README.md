@@ -4,6 +4,12 @@
 
 这是对[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的fork和修改，目的是使它支持TensorFlow 2.0。
 
+主要修改内容如下：
+
+- 以tf.keras为主导，替换掉独立的keras库
+- 修改部分基于TensorFlow 1.x版本的接口和逻辑，使项目支持TensorFlow 2.0
+- 修改原项目命令行参数错误
+
 下附[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的README.
 
 
