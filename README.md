@@ -10,6 +10,8 @@
 - 修改部分基于TensorFlow 1.x版本的接口和逻辑，使项目支持TensorFlow 2.0
 - 修改原项目命令行参数错误
 
+更多信息请访问 [深度学习下的目标检测算法——TensorFlow 2.0下的YOLOv3实践](https://blog.csdn.net/aaronjny/article/details/103658254) (https://blog.csdn.net/aaronjny/article/details/103658254)
+
 下附[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的README.
 
 
