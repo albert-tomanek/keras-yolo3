@@ -89,6 +89,7 @@ class YOLO(object):
         np.random.shuffle(self.colors)  # Shuffle colors to decorrelate adjacent classes.
         np.random.seed(None)  # Reset seed to default.
 
+    @tf.function
     def compute_output(self, image_data, image_shape):
         # Generate output tensor targets for filtered bounding boxes.
         # self.input_image_shape = K.placeholder(shape=(2,))

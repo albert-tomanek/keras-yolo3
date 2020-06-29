@@ -2,20 +2,38 @@
 
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](LICENSE)
 
-这是对[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的fork和修改，目的是使它支持TensorFlow 2.0。
+这是对[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的fork和修改，目的是使它支持TensorFlow 2.2。
 
 主要修改内容如下：
 
 - 以tf.keras为主导，替换掉独立的keras库
-- 修改部分基于TensorFlow 1.x版本的接口和逻辑，使项目支持TensorFlow 2.0
+- 修改部分基于TensorFlow 1.x版本的接口和逻辑，使项目支持TensorFlow 2.2
 - 修改原项目命令行参数错误
+
+2020.6.29 更新：
+
+- 在TensorFlow 2.2下测试兼容性，运行正常
+- 之前有朋友反映无法通过`train.py`完成自定义数据集的训练，我在TensorFlow 2.2下做了测试，一切正常
+- 使用`tf.function`优化模型性能
+
+关于训练：
+
+> 亲测TensorFlow 2.2下训练自定义数据集是没有问题的，训练不成功的同学请尝试如下方法：
+>
+> 1. 升级TensorFlow版本为2.2
+> 2. 仔细阅读原`README.MD`中关于`train.py`部分的表述，在训练前需要先准备数据集、处理数据格式以及按实际情况修改`train.py`中的参数。如果没有做这些工作的话，出现错误很正常。
+
+TODO:
+
+- [] 编写一个使用`tf2-keras-yolo3`训练自己的数据集的详细教程。
+- [] 提取各脚本中常用配置参数到统一文件
 
 更多信息请访问 [深度学习下的目标检测算法——TensorFlow 2.0下的YOLOv3实践](https://blog.csdn.net/aaronjny/article/details/103658254) (https://blog.csdn.net/aaronjny/article/details/103658254)
 
 下附[qqwweee/keras-yolo3](https://github.com/qqwweee/keras-yolo3)的README.
 
 
-This is a fork and modification of [qqwweee / keras-yolo3](https://github.com/qqwweee/keras-yolo3), in order to make it support TensorFlow 2.0.
+This is a fork and modification of [qqwweee / keras-yolo3](https://github.com/qqwweee/keras-yolo3), in order to make it support TensorFlow 2.2.
 
 Attached is the README of [qqwweee / keras-yolo3](https://github.com/qqwweee/keras-yolo3).
 
