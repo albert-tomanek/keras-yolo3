@@ -12,11 +12,13 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.layers import Input
 from PIL import Image, ImageFont, ImageDraw
 
-from yolo3.model import yolo_eval, yolo_body, tiny_yolo_body
-from yolo3.utils import letterbox_image
+from .yolo3.model import yolo_eval, yolo_body, tiny_yolo_body
+from .yolo3.utils import letterbox_image
 import os
-from tensorflow.keras.utils import multi_gpu_model
-
+if tf.__version__ >= "2.4.0":  # As per https://github.com/keras-team/keras/issues/14440#issuecomment-929956752
+    from tensorflow.python.keras.utils.multi_gpu_utils import multi_gpu_model
+else:
+    from tensorflow.keras.utils import multi_gpu_model
 
 class YOLO(object):
     _defaults = {

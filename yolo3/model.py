@@ -11,7 +11,7 @@ from tensorflow.keras.layers import BatchNormalization
 from tensorflow.keras.models import Model
 from tensorflow.keras.regularizers import l2
 
-from yolo3.utils import compose
+from .utils import compose
 
 
 @wraps(Conv2D)
