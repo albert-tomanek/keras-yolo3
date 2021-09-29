@@ -21,16 +21,6 @@ else:
     from tensorflow.keras.utils import multi_gpu_model
 
 class YOLO(object):
-    _defaults = {
-        "model_path": 'model_data/yolo.h5',
-        "anchors_path": 'model_data/yolo_anchors.txt',
-        "classes_path": 'model_data/coco_classes.txt',
-        "score": 0.3,
-        "iou": 0.45,
-        "model_image_size": (416, 416),
-        "gpu_num": 1,
-    }
-
     @classmethod
     def get_defaults(cls, n):
         if n in cls._defaults:
@@ -38,9 +28,16 @@ class YOLO(object):
         else:
             return "Unrecognized attribute name '" + n + "'"
 
-    def __init__(self, **kwargs):
-        self.__dict__.update(self._defaults)  # set up default values
-        self.__dict__.update(kwargs)  # and update with user overrides
+    def __init__(self, model_path: str, classes_path: str, tiny=False, anchors_path: str=None, score=0.3, iou=0.45, model_image_size=(416, 416), gpu_num=1):
+        self.__dict__.update({
+            "model_path": model_path,
+            "classes_path": classes_path,
+            "anchors_path": anchors_path if anchors_path else ((os.path.dirname(__file__), '/model_data/yolo_anchors.txt') if not tiny else (os.path.dirname(__file__) + '/model_data/tiny_yolo_anchors.txt')),
+            "score": score,
+            "iou": iou,
+            "model_image_size": model_image_size,
+            "gpu_num": gpu_num,
+        })
         self.class_names = self._get_class()
         self.anchors = self._get_anchors()
         self.load_yolo_model()
